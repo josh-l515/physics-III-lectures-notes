@@ -1,0 +1,377 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------------------------------------------
+% Tau
+% LaTeX Template
+% Version 2.4.4 (28/02/2025)
+%
+% Author: 
+% Guillermo Jimenez (memo.notess1@gmail.com)
+% 
+% License:
+% Creative Commons CC BY 4.0
+% --------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[9pt,a4paper,twocolumn,twoside]{tau-class/tau}
+\usepackage[english]{babel}
+
+%% Spanish babel recomendation
+% \usepackage[spanish,es-nodecimaldot,es-noindentfirst]{babel} 
+
+%% Draft watermark
+% \usepackage{draftwatermark}
+
+%----------------------------------------------------------
+% TITLE
+%----------------------------------------------------------
+
+\journalname{LABORATORIO N° 03 - \LaTeX}
+\title{Oscilación de un carro y resortes}
+
+%----------------------------------------------------------
+% AUTHORS, AFFILIATIONS AND PROFESSOR
+%----------------------------------------------------------
+
+\author[a,1]{Apellidos y Nombres}
+% \author[b,2]{Author Two}
+% \author[b,c,3]{Author Three}
+
+%----------------------------------------------------------
+
+\affil[a]{\textbf{Código:} 182739}
+% \affil[b]{Affiliation of author two}
+% \affil[c]{Affiliation of author three}
+\affil[a]{\textbf{Curso:} Física - II}
+\professor{\textbf{Docente:} HUALLPA AIMITUMA Josué David}
+
+%----------------------------------------------------------
+% FOOTER INFORMATION
+%----------------------------------------------------------
+
+\institution{Universidad Nacional Micaela Bastidas de Apurimac}
+\footinfo{Ing. Minas - Haquira}
+\theday{12 de Junio del 2025}
+\leadauthor{Author last name et al.}
+\course{FISICA - I}
+
+%----------------------------------------------------------
+% ABSTRACT AND KEYWORDS
+%----------------------------------------------------------
+
+\begin{abstract}    
+Se investiga el efecto sobre el período al cambiar la constante del resorte, la amplitud de la oscilación y la masa del carro.
+\end{abstract}
+
+%----------------------------------------------------------
+
+\keywords{\LaTeX\ class, lab report, academic article, tau class}
+
+%----------------------------------------------------------
+
+\begin{document}
+		
+    \maketitle 
+    \thispagestyle{firststyle} 
+    \tauabstract 
+    % \tableofcontents
+    % \linenumbers 
+    
+%----------------------------------------------------------
+
+\section{OBJETIVOS}
+    \begin{enumerate}
+        \item Determinar experimentalmente el valor de la constante de elasticidad de un resorte.
+        \item Determinar los valores de la velocidad y aceleración máxima
+    \end{enumerate}
+    
+\section{RESUMEN TEÓRICO}
+    \taustart{E}l período de oscilación del carro y el sistema de resorte se mide con la cerca de estacas y la fotopuerta. La constante del resorte se determina con el sensor de fuerza y el movimiento rotatorio para medir el desplazamiento.
+    
+\section{PROCEDIMIENTO}
+\subsection{Equipo}
+\begin{tabular}{|c|c|}
+     \hline
+     1 Sistema de dinámica PAScar &  ME-6955\\ \hline
+     2 Carro compacto Mass & ME-6755\\  \hline
+     1 sensor de fuerza de alta resolución & PS-2189\\ \hline
+     1 sensor de movimiento giratorio & PS-2120A\\ \hline
+     1 Puerta fotográfica Photogate & ME-9498A\\ \hline
+     1 soporte para el Photogate  & (en ME-8998) \\ \hline
+     1 picket fence smart timer & ME-8933\\ \hline
+     1 juego de resortes & ME-8999 \\ \hline
+     1 cuerda trenzada & SE-8050 \\ \hline
+     1 Abrazadera de mesa & ME-9472\\ \hline
+     1 Varilla de 45 cm & ME-8736\\ \hline
+\end{tabular}
+\subsection{Montaje Experimental}
+\begin{figure}[htbp]
+    \centering
+    \hfill
+    \includegraphics[width=1\linewidth]{figures/Oscillation of Cart and Spring.jpg}
+    \caption{Montaje experimental global}
+    \label{fig:01}
+\end{figure}
+\begin{enumerate}
+    \item Configure la pista como se muestra en la Figura \textcolor{blue}{\ref{fig:02}}, a continuación. Conecte el Photogate antes de agregar los topes.
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.95\linewidth]{figures/Cart and Spring.jpg}
+        \caption{Carril, PAScar y Photogate}
+        \label{fig:02}
+    \end{figure}
+    \item Conecte el Photogate a la entrada digital N 1.
+    \item El juego de resortes contiene tres de cada uno de cuatro resortes diferentes. Comience con dos de los resortes más rígidos y largos. Cuando es nuevo, este resorte tiene una pequeña mancha de pintura roja en un extremo
+    \item . Es más fácil sujetar los resortes al carrito usando un bucle corto de cuerda como se muestra en la Figura \textcolor{blue}{\ref{fig:3a}}. El otro extremo del resorte se enrolla directamente sobre el poste en el tope final (ver Figura \textcolor{blue}{\ref{fig:3b}}).
+    \begin{figure}[htbp]
+         \centering
+         \hfill
+         \begin{subfigure}[b]{0.44\linewidth}
+             \centering
+             \includegraphics[width=\textwidth]{figures/Spring and Endstop.jpg}
+             \caption{ Fijación  de  resortes}
+             \label{fig:3a}
+         \end{subfigure}
+         \begin{subfigure}[b]{0.48\linewidth}
+             \centering
+             \includegraphics[width=\textwidth]{figures/Spring String.jpg}
+             \caption{ Poste  de  tope  final}
+             \label{fig:3b}
+         \end{subfigure}
+        \caption{Montaje experimental}
+        \label{fig:montaje_experimental}
+    \end{figure}
+    \item Coloque el Picket Fence en el carrito como se muestra. Ajuste la altura del Photogate para que la «Doble Bandera» en la parte superior del Picket Fence interrumpa el haz de luz al pasar el carrito.
+    \item Ajuste la posición del Photogate en la pista para que quede centrado en el carrito.
+    \item En PASCO Capstone, cree un temporizador personalizado para el Photogate.
+        \begin{itemize}
+            \item Abra la Configuración del temporizador a la izquierda de la página y seleccione Temporizador personalizado
+            \item Seleccione Photogate, Canal 1
+            \item Configure una secuencia de tiempo que consista en que Photogate, Ch.1 se bloquee cinco veces, ya que la bandera doble bloqueará el photogate cinco veces cuando haya transcurrido un período.
+            \item Especifique el nombre de la medición como Período            
+        \end{itemize}
+    \item Cree una tabla con una columna con el Período y active la Media en las estadísticas.
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%RECOLECCION DE DATOS 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{RECOLECCIÓN Y ANÁLISIS DE DATOS}
+\subsection{EXPERIENCIA 01: Medición del período de oscilación}
+\begin{itemize}
+            \item [a)]   Desplace  el  carro  de  su  posición  de  equilibrio  varios  centímetros  y  déjelo  oscilar.
+            \item [b)]  Haga  clic  en  "Registrar"  para  comenzar  a  tomar  datos.  Tras  cada  oscilación  completa,  el  período  medido  se mostrará  en  la  tabla.  Tras  algunas  oscilaciones,  haga  clic  en  "Detener".  Intente  otra  ejecución.  ¿Cuánta  incertidumbre  hay  en  el  valor?
+            \item [c)]  Desplace  el  carrito  $2,\rm  cm$  de  su  posición  de  equilibrio  y  registre  su  período  de  oscilación.  Repita  el  proceso  para  una  amplitud  de  $15\,\rm  cm$.  Registre  los  valores  a  continuación
+            \item [d)]  Al  aumentar  la  amplitud  de  la  oscilación,  ¿el  período  aumentó,  disminuyó  o  se  mantuvo  aproximadamente igual?
+            \item [e)]   Incline  la  pista  elevando  un  extremo  unos  $10\,\rm  cm$  y  ajuste  el  sensor  fotoeléctrico  de  modo  que  siga  centrado  en  el  carro.  Mida  el  período  de  scilación.  ¿Aumentó,  disminuyó  o  se  mantuvo  prácticamente  igual?
+            \item [f)]  Vuelva  a  nivelar  el  carrito.  Acerque  uno  de  los  topes  finales  unos  $20\,\rm  cm$  al  carrito,  de  modo  que  la  fuerza  ejercida  por  los  resortes  sea  mucho  menor.  Mida  el  período  de  oscilación.  ¿Aumentó,  disminuyó  o  se  mantuvo  prácticamente  igual?
+            \item[g)]  Vuelva  a  colocar  el  tope  en  su  posición  original.  Coloque  una  de  las  barras  de  masa  en  el  carro  y  mida  el  período  de  oscilación.  ¿Aumentó,  disminuyó  o  se  mantuvo  prácticamente  igual? 
+        \end{itemize}
+\subsection{EXPERIENCIA 2: Dependencia  del  período  con  respecto  a  la  masa  del  carro}
+    \begin{enumerate}
+        \item \textbf{Recolección de datos}
+             \begin{itemize}
+                \item [a)]   Cree  una  tabla  como  la  que  se  muestra  a  continuación.  Ambas  columnas  son  conjuntos  de  datos  introducidos  por  el  usuario.
+                \begin{table}[htbp]
+                    \centering
+                    \begin{tabular}{|c|c|}
+                    \hline
+                         $T$ (s) & $m$ (kg)  \\\hline
+                         & \\\hline
+                         & \\\hline
+                         & \\\hline
+                         & \\\hline
+                         & \\\hline
+                    \end{tabular}
+                    \caption{Variación de la masa}
+                    \label{tab:01}
+                \end{table}
+                \item [b)]   Mida  la  masa  del  carro  +  el picket fence  y  registre  el  valor  en  la  fila  1  de  la  Tabla  \textcolor{blue}{\ref{tab:01}}. Mida  el  período  de  una  oscilación  de  amplitud  de  $5\,\rm  cm$  y  registre  el  valor  en  la  Tabla.
+                \item [c)]  Agrega  una  de  las  barras  de  masa  plateadas  largas  al  carrito.  La  masa  es  de  aproximadamente  $0,25\,\rm  kg$,  pero  puedes  usar  la  báscula  para  mayor  precisión.  Registra  la  nueva  masa  total  del  carrito,  el picket fence  y  la  barra  de  masa  en  la  fila  2.
+                \item [d)]   Mida  el  período  para  una  oscilación  de  amplitud  de  $5\,\rm  cm$  y  registre  el  valor  en  la  Tabla.
+                \item [e)]  Agregue  la  segunda  barra  de  masa  (ver  Fig.  \textcolor{blue}{\ref{fig:4a}})  al  carro.  Tenga  en  cuenta  que  estas  masas  se  apilan.  Registre la nueva  masa  y  período  en  la  fila  3.
+                \item [f)]  Agregue  una  de  las  masas  compactas  negras  (ver  Figura  \textcolor{blue}{\ref{fig:4b}})  y  registre  la  nueva  masa  y  período  en  fila  4.
+                \item [g)]   Agregue  la  segunda  masa  compacta  y  registre  la  nueva  masa  y  período  en  la  fila  5
+                 \begin{figure}[htbp]
+                     \centering
+                     \hfill
+                     \begin{subfigure}[b]{0.42\linewidth}
+                         \centering
+                         \includegraphics[width=\textwidth]{figures/Cart Masses.jpg}
+                         \caption{ Adición  de  masas}
+                         \label{fig:4a}
+                     \end{subfigure}
+                     \begin{subfigure}[b]{0.42\linewidth}
+                         \centering
+                         \includegraphics[width=\textwidth]{figures/Compact Cart Masses.jpg}
+                         \caption{ Uso  de  masas   compactas}
+                         \label{fig:4b}
+                     \end{subfigure}
+                    \caption{Montaje experimental sistema masa-resorte}
+                    \label{fig:montaje_experimental_2}
+                \end{figure}
+            \end{itemize}
+        \item \textbf{Análisis de datos}
+            \begin{itemize}
+                \item [a)]  Crea  una  gráfica  de  $T$  vs.  $m$.  ¿Puedes  determinar  en  la  gráfica  cuál  es  la  relación  entre  el  periodo  y la masa?  ¿Parece  lineal?
+                \item [b)] Haga  clic  en  "masa"  en  el  eje  horizontal  del  gráfico,  seleccione  "Cálculo  rápido"  y  elija  un  $m^2$ o  gráfico  $1/m$.  ¿Alguna  de  estas  opciones  lo  hace  más  lineal?
+                \item [c)] Regrese  el  eje  horizontal  al  gráfico  "m".  Use  la  "Cálculo  rápido"  en  el  eje  vertical  para garficar $T^2$  ¿Es  esto  lineal?
+            \end{itemize}
+    \end{enumerate}
+\subsection{EXPERIENCIA 3: Medición  de  la  constante  del  resorte}
+    \begin{enumerate}
+        \item \textbf{Recolección de datos}
+            \begin{itemize}
+                \item [a)] Retire  todas  las  masas  sobrantes  del  carrito.
+                \item [b)]  Conecte  una  cuerda  al  lazo  en  la  parte  inferior  del  carrito  como  se  muestra  en  la  Figura  \textcolor{blue}{\ref{fig:5a}}.  Esta  cuerda  pasa  por  debajo  del  tope  final  y  sobre  la  polea  grande  del  sensor  de  movimiento  giratorio  (ver  Figura  \textcolor{blue}{\ref{fig:5b}})  y  luego  se  engancha  al  sensor  de  fuerza.
+                \begin{figure}[htbp]
+                     \centering
+                     \hfill
+                     \begin{subfigure}[b]{0.42\linewidth}
+                         \centering
+                         \includegraphics[width=\textwidth]{figures/Force String.jpg}
+                         \caption{  Conexión  de  la  cuerda  para  el  sensor  de  fuerza}
+                         \label{fig:5a}
+                     \end{subfigure}
+                     \begin{subfigure}[b]{0.42\linewidth}
+                         \centering
+                         \includegraphics[width=\textwidth]{figures/Oscillations Force.jpg}
+                         \caption{ Medición  de  la  constante  del  resorte}
+                         \label{fig:5b}
+                     \end{subfigure}
+                    \caption{Montaje experimental sistema masa-resorte}
+                    \label{fig:montaje_experimental_5}
+                \end{figure}
+                \item [c)]  Utilice  la  abrazadera  de  mesa  y  la  varilla  de  $45\,\rm  cm$  para  montar  el  sensor  de  movimiento  giratorio  como  se  muestra  en Figura \textcolor{blue}{\ref{fig:5b}}).  Observe  que  se  ha  retirado  la  perilla  superior  de  la  abrazadera  de  la  mesa.  La polea grande de la polea de 3 pasos debe estar en el exterior. El riel debe colocarse de modo que la cuerda que sale del carro corra recta por el riel. Ajuste la altura de modo que la cuerda no toque ni el riel ni el tope final.
+                \item [d)]  Conecte  el  sensor  de  fuerza  y  el  sensor  de  movimiento  giratorio  a  los  puertos  PASPORT  como  se  muestra en  Figura  \textcolor{blue}{\ref{fig:01}}.
+                \begin{note}
+                     Tenga  en  cuenta  que  se  ha  quitado  la  perilla  superior  de   la  abrazadera  de  la  mesa.  Esto  permite  ajustar  el  sensor  de  movimiento  giratorio  a  una  posición  lo  suficientemente  baja.  La  cuerda  debe  pasar  por  debajo  del  tope  sin  tocarlo.
+                \end{note}
+            \end{itemize}
+        \item \textbf{Análisis de datos}
+        
+         Cuando  se  aplica  fuerza  a  un  resorte,  la  extensión  o  compresión  resultante  del  resorte  mantiene  una  relación  lineal  con  la  fuerza  aplicada.  Esta  relación  se  manifiesta  en  la  Ley  de  Hooke:
+         \begin{equation}
+             F=k\Delta x
+         \end{equation}
+         donde  $F$  es  la  fuerza  aplicada,  $\Delta x$  es  la  extensión  o  compresión  del  resorte  medida  desde  su  longitud  sin  estirar  y  $k$  es  la  constante  del  resorte.
+         \begin{itemize}
+                \item [a)]     Utilice  la  configuración  que  se  muestra  en  la  Figura  \textcolor{blue}{\ref{fig:5b}}.  Retire  la  cuerda  del  gancho  y  luego  presione  el botón  de  cero  del  sensor  de  fuerza.  Vuelva  a  conectar  la  cuerda.  Asegúrese  de  que  pase  por  la  polea  de  mayor  diámetro.
+                \item [b)]  Establezca  la  frecuencia  de  muestreo  común  en  $20\,\rm  Hz$
+                \item [c)]    En  Capstone,  cree  un  gráfico  de  Fuerza  vs.  Posición  (del  sensor  de  movimiento  giratorio).  
+                \item [d)]    Cree  otra  tabla  como  se  muestra  a  continuación.  Seleccione  el  período  $T$  en  la  primera  columna.  Luego,  haga  clic  en  el  conjunto y  seleccione  "Crear  nuevo  conjunto  de  datos  introducidos  por  el  usuario"  para  obtener  el  conjunto  2.  En  la  segunda columna,  cree  un  nuevo  conjunto  de  datos  introducidos  por  el  usuario  llamado  $k$  con  unidades  de  $N/m$.  Seleccione  también  el  conjunto  2  para  esta  columna.
+                \begin{table}[htbp]
+                    \centering
+                    \begin{tabular}{|c|c|}
+                    \hline
+                         Conjunt 2 & Conjunto 2\\ \hline
+                         $T$ (s) & $k$ (N/m)  \\\hline
+                         & \\\hline
+                         & \\\hline
+                         & \\\hline
+                         & \\\hline
+                         & \\\hline
+                    \end{tabular}
+                    \caption{ Variación  del  resorte}
+                    \label{tab:02}
+                \end{table}
+                \item [e)]   Haga  clic  en  Grabar  para  comenzar  a  registrar  datos.  Tire  suavemente  hacia  abajo  del  sensor  de  fuerza.  No extienda  los  resortes  más  de  $20 \,\rm cm$.  Pulse  "Detener".
+                \item [f)]  Dado que la lectura de fuerza con el Sensor de Fuerza es negativa para un "tirón", aplique un "QuickCalc" en el eje vertical para que las fuerzas sean positivas. Si el desplazamiento para tus datos es negativo, puedes elegir un «QuickCalc» en el eje horizontal también. Simplemente haga clic en Posición en el gráfico y elija un QuickCalc $-x$.
+                \item [g)]    Seleccione  un  ajuste  de  curva  lineal.  También  puede  usar  la  herramienta  de  selección  para  seleccionar  solo  una  parte.  de  los  datos.
+                \item [h)]   ¿Cuál  es  el  significado  físico  de  la  pendiente?  ¿Tiene  unidades?  Ingrese  el  valor  de  $k$  en  la  fila  1  de  la  Tabla  \textcolor{blue}{\ref{tab:02}}.
+         \end{itemize}
+    \end{enumerate}
+\subsection{EXPERIENCIA 4: Cambiando  la  constante  del  resorte}
+\begin{note}
+     Las  barras  de  masa  no  se  utilizan  durante  esta  parte  del  experimento.
+\end{note}
+\begin{enumerate}
+    \item \textbf{Recolección de datos}
+        \begin{itemize}
+            \item [a)]   Mida  el  período  del  carrito  para  una  oscilación  de  $5\,\rm  cm$  de  amplitud.  Deje  la  cuerda  atada  al  bucle  inferior  del  carrito,  ya  que  la  necesitará  para  la  siguiente  parte.  Si  simplemente  desengancha  el  sensor  de  fuerza,  el  movimiento  de  la  cuerda  ligera  no  tendrá  mucho  efecto.  Ingrese  el  valor  en  la  fila  1  de  la  Tabla \textcolor{blue}{\ref{tab:02}}.
+            \item [b)] Reemplace  uno  de  los  resortes  por  uno  de  los  resortes  más  débiles  y  largos.
+            \item [c)]   Utilice  el  procedimiento  de  la  sección  anterior  para  medir  la  nueva  constante  de  resorte.  Si  no se obtiene  un  valor  diferente,  revisa  los  resortes.
+            \item [d)]   Mida  el  nuevo  período  de  oscilación  del  carro. 
+            \item [e)]  Ingrese  valores  para  el  período  y  la  constante  del  resorte  en  la  fila  2  de  la  Tabla  \textcolor{blue}{\ref{tab:02}}.
+            \item [f)] Reemplace  el  otro  resorte  original  con  uno  de  los  resortes  más  débiles  y  largos.
+            \item [g)]    Mida  la  nueva  constante  y  período  del  resorte  e  ingrese  los  valores  en  la  fila  3  de  la  tabla.
+            \item[h)]  Reemplace  uno  de  los  resortes  largos  débiles  con  dos  de  los  resortes  cortos  más  débiles  como  se  muestra  en  Figura  9.  Los  resortes  cortos  débiles  son  los  que  no  tienen  pintura  azul.
+            \begin{figure}[htbp]
+                \centering
+                \hfill
+                \includegraphics[width=0.90\linewidth]{figures/Short Springs.jpg}
+                \caption{Uso  de  resortes  cortos}
+                \label{fig:06}
+            \end{figure}
+            \item[i)]   Mida  la  nueva  constante  y  período  del  resorte  e  ingrese  los  valores  en  la  fila  4  de  la  tabla.
+            \item[j)]   Agregue  el  resorte  corto  débil  restante  al  extremo  del  resorte  largo  débil  en  la  pista.
+            \item[k)]   Mida  la  nueva  constante  y  período  del  resorte  e  ingrese  los  valores  en  la  fila  5  de  la  tabla.
+        \end{itemize}
+    \item \textbf{Análisis de Datos}
+        \begin{itemize}
+            \item [a)]   Crea  una  gráfica  de  $T$  vs.  $k$  y  elige  el  Conjunto  2.  La  gráfica  muestra  los  datos  del  periodo  que  tomaste  para  cinco  constantes  de  resorte  diferentes.  ¿Puedes  determinar  con  la  gráfica  cuál  es  la  relación  entre  el  periodo  y  la  masa?  ¿Parece  lineal?
+            \item [b)] Utilice  una  "Calculadora  rápida"  en  el  eje  horizontal  para  graficar  $k^2$ ¿Esto  lo  hace  más  lineal?
+            \item [c)]  Utilice  una  "Calculadora  rápida"  en  el  eje  horizontal  para  graficar  $1/k$ ¿Esto  lo  hace  más  lineal?
+            \item [d)]   Deje  el  eje  horizontal  como  $1/k$.  Use  la  "Cálculo  rápido"  en  el  eje  vertical  para  graficar  $T^2$. ¿esto  es  lineal?
+        \end{itemize}
+\end{enumerate}
+\subsection{EXPERIENCIA 5: Conjuntos de resortes}
+ En  la  primera  parte  del  laboratorio,  variaste  la  masa  del  carro  oscilante  y  descubriste  que  el  cuadrado  del  período  es  directamente  
+proporcional  a  la  masa.  En  la  segunda  parte,  variaste  la  constante  del  resorte  y  descubriste  que  el  cuadrado  del  período  es  inversamente   proporcional  a  la  masa.  Esto  significa  que  el  período  es  proporcional  a  la  raíz  cuadrada  de  la  relación  entre  la  masa  y  la  constante  del  resorte.
+\begin{equation}
+    T\propto\sqrt{\frac{m}{k}}
+    \label{eq:periodo_prop}
+\end{equation}
+\begin{enumerate}
+    \item \textbf{Recolección de datos}
+        \begin{itemize}
+            \item [a)]  Ahora combinará todos los datos que tomó en un gráfico. De la Tabla  \textcolor{blue}{\ref{tab:01}} (Masa Variable), copie los Datos del Período en la columna 1 de una nueva tabla como se muestra a continuación. Seleccione un nuevo conjunto de datos (Conjunto 3) para cada columna. La última columna es un cálculo hecho en la calculadora Capstone: 
+            \begin{equation}
+                 (m/k)^.5 =([mass]/[k ])^.5 
+            \end{equation}
+            \begin{table}[htbp]
+                    \centering
+                    \hfill
+                    \begin{tabular}{|c|c|c|c|}
+                    \hline
+                         Conjunt 3 & Conjunto 3 & Conjunt 3 & Conjunto 3  \\ \hline
+                         $T$ (s) & $m$ (kg) &  $k$ (N/m)& $\rm m/k^{.5}$ \\\hline
+                         &&& \\\hline
+                         &&& \\\hline
+                         &&& \\\hline
+                         &&& \\\hline
+                         &&& \\\hline
+                    \end{tabular}
+                    \caption{ Resortes combinados}
+                    \label{tab:03}
+                \end{table}
+            \item [b)]  De  la  Tabla  \textcolor{blue}{\ref{tab:01}}  (  masa variable),  copie  los  datos  de  masa  en  la  columna  2  de  la  Tabla  \textcolor{blue}{\ref{tab:03}}.
+            \item [c)]    ¿Cuál  fue  el  valor  de  la  constante  elástica  en  esta  parte  del  experimento?  Pista:  Observa  los  datos  de  la  Tabla  \textcolor{blue}{\ref{tab:02}}  ($k$ variable).  Introduce  este  valor  en  la  columna  3  para  cada  fila.
+            \item [d)]  Tenga  en  cuenta  que  se  realiza  automáticamente  un  cálculo  (raíz  cuadrada  $m/k$)  para  cada  conjunto  de  datos  y  se  muestra  en  la  columna  4.  Verifique  al  menos  uno  de  los  valores  para  confirmar  que  sea correcto.
+            \item [e)]   Tenga  en  cuenta  que  las  unidades  se  han  omitido  del  cálculo.  ¿Cuáles  son?  Reduzca  su  respuesta en  la  medida  de  lo  posible.
+            \item [f)] De la Tabla \textcolor{blue}{\ref{tab:02}} ($k$ variable), copie los Datos del Periodo y péguelos en los datos de la columna 1 de la Tabla \textcolor{blue}{\ref{tab:03}} debajo de los datos que ya están ahí.
+            \item [g)]   De la Tabla \textcolor{blue}{\ref{tab:02}} ($k$ variable), copie los datos de la constante del muelle y péguelos en los datos de la columna 3 de la Tabla \textcolor{blue}{\ref{tab:03}} .
+            \item[h)]  ¿Cuál fue la Masa de Carro para esta parte del experimento? Introduce este valor en la columna 2 para cada una de las nuevas filas.
+        \end{itemize}
+    \item \textbf{Análisis de datos}
+        \begin{itemize}
+            \item[a)]    Cree  un  gráfico  de  $T$  vs.  $(m/k)^.5$  y  elija  el  Conjunto  3.
+            \item[b)]    Seleccione  el  ajuste  de  curva  lineal  en  la  paleta  de  herramientas  gráficas.  ¿Cuál  es  el  significado  físico  de  la  pendiente?  ¿Tiene  unidades?  ¿Cuál  es  la  incertidumbre  de  su  valor
+            \item[c)]    ¿Cuál  es  el  valor  aceptado  para  la  constante  de  proporcionalidad  en  la  ecuación  \textcolor{blue}{\ref{eq:periodo_prop}}?  Pista:  ¡Es  un  múltiplo  de  $\pi$.
+            \item[d)]  Compárelo  con  el  valor  aceptado  utilizando  el  cálculo  de  error  porcentual
+            \item [e)]  ¿Coincide el valor aceptado con el valor medido dentro de la incertidumbre del experimento?
+        \end{itemize}
+\end{enumerate}
+\section{CONCLUSIONES}
+Responda a los objetivos. Evaluar el nivel de concordancia con el valor teórico. Mencionar posibles fuentes de error y cómo mejorarlas en futuras prácticas.
+\section{REFERENCIAS}
+Las referencias se cargan automáticamente una vez puestos en el archivo tau.bib y citadas previamente en el documento.
+%----------------------------------------------------------
+
+% \printbibliography
+
+%----------------------------------------------------------
+\section{APENDICES}
+Agregue aquí el código utilizado para su análisis de datos en Python
+\end{document}
