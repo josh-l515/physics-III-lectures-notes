@@ -1,0 +1,127 @@
+% !TEX root = main.tex
+
+% ---------- Geometry & Page Setup ----------
+\usepackage[top=0.5cm, bottom=0.5cm, left=0.5cm, right=0.5cm]{geometry}
+\setlength{\parindent}{0cm}
+\setlength{\columnseprule}{0.4pt}
+
+% ---------- Language ----------
+\usepackage[spanish]{babel}
+
+% ---------- Math ----------
+\usepackage{amsmath, amssymb, amsfonts, latexsym}
+\usepackage{mathrsfs} % optional: for fancy math fonts
+\mathchardef\times="2202
+
+% ---------- Figures & Layout ----------
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+
+% ---------- Tables & Columns ----------
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{multicol}
+
+% ---------- Theorems ----------
+\usepackage{ntheorem}
+
+% ---------- Headers & Footers ----------
+\usepackage{fancyhdr}
+
+% ---------- Hyperlinks ----------
+\usepackage[colorlinks=true, linkcolor=blue]{hyperref}
+
+% ---------- Custom Environment ----------
+\usepackage{xparse}
+\usepackage{etoolbox}
+\newcounter{excercise}
+
+% \NewDocumentEnvironment{excercise}{O{} O{0.95\linewidth} O{} m m}
+% {
+%     \vspace{1em}
+%     \refstepcounter{excercise}
+%     \noindent
+%     \ifstrempty{#1}
+%     {
+%         % No image
+%         \begin{minipage}[b]{0.97\linewidth}
+%             \textbf{Ejercicio \theexcercise–}%
+%             \phantomsection\label{#4}\par #5
+%             \ifstrempty{#3}{}{%
+%                 \vspace{0.5em}
+%                 \begin{flushright}
+%                     \textbf{Resp.(s):} \textbf{#3}
+%                 \end{flushright}
+%             }
+%         \end{minipage}
+%     }
+%     {
+%         % With image
+%         \begin{minipage}[b]{0.6\linewidth}
+%             \textbf{Ejercicio \theexcercise–}%
+%             \phantomsection\label{#4}\par #5
+%             \ifstrempty{#3}{}{%
+%                 \vspace{0.5em}
+%                 \begin{flushright}
+%                     \textbf{Resp.(s):} \textbf{#3}
+%                 \end{flushright}
+%             }
+%         \end{minipage}
+%         \hfill
+%         \begin{minipage}[b]{0.35\linewidth}
+%             \centering
+%             \includegraphics[width=#2]{#1}
+%         \end{minipage}
+%     }
+%     \vspace{1em}
+%     \hrule
+% }
+% {}
+
+
+\NewDocumentEnvironment{excercise}{O{} O{0.95\linewidth} O{} m m}
+{
+    \vspace{1em}
+    \refstepcounter{excercise}
+    \noindent
+    \ifstrempty{#1}
+    {
+        % Sin imagen
+        \begin{minipage}[b]{0.97\linewidth}
+            \textbf{Ejercicio \theexcercise–}%
+            \phantomsection\label{#4}~#5  % Etiqueta sin salto de línea
+
+            \ifstrempty{#3}{}{%
+                \vspace{-1em}
+                \begin{flushright}
+                    \textbf{Resp.(s):} \textbf{#3}
+                \end{flushright}
+            }
+        \end{minipage}
+    }
+    {
+        % Con imagen
+        \begin{minipage}[b]{0.45\linewidth}
+            \textbf{Ejercicio \theexcercise–}%
+            \phantomsection\label{#4}~#5
+
+            \ifstrempty{#3}{}{%
+                % \vspace{0.5em}
+                \begin{flushright}
+                    \textbf{Resp.(s):} \textbf{#3}
+                \end{flushright}
+            }
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.55\linewidth}
+            \centering
+            \includegraphics[width=#2]{#1}
+        \end{minipage}
+    }
+    \vspace{0.4em}
+    \hrule
+}
+{}
