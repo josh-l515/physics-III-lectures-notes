@@ -9,14 +9,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Descargar el código del repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ✅ Crear el directorio que latexmk necesita
+      # 2️⃣ Crear la carpeta de salida que latexmk necesita
       - name: Create build directory
         run: mkdir -p build/sections
 
-      # ✅ Compilar usando latex-action (usa latexmk)
+      # 3️⃣ Compilar usando tu .latexmkrc
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
@@ -24,13 +25,13 @@ jobs:
           compiler: latexmk
           args: "-pdf -interaction=nonstopmode -shell-escape"
 
-      # ✅ Mover el PDF compilado a docs/ (para GitHub Pages)
+      # 4️⃣ Mover el PDF compilado a docs/
       - name: Move PDF to docs/
         run: |
           mkdir -p docs
           cp build/main.pdf docs/
 
-      # ✅ Commit automático del PDF generado
+      # 5️⃣ Commit automático del PDF compilado
       - name: Commit and push PDF
         run: |
           git config user.name "github-actions[bot]"
