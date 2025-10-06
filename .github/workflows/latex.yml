@@ -12,18 +12,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up LaTeX
+      # ✅ Crear el directorio que latexmk necesita
+      - name: Create build directory
+        run: mkdir -p build/sections
+
+      # ✅ Compilar usando latex-action (usa latexmk)
+      - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
           compiler: latexmk
           args: "-pdf -interaction=nonstopmode -shell-escape"
 
+      # ✅ Mover el PDF compilado a docs/ (para GitHub Pages)
       - name: Move PDF to docs/
         run: |
           mkdir -p docs
-          cp main.pdf docs/
+          cp build/main.pdf docs/
 
+      # ✅ Commit automático del PDF generado
       - name: Commit and push PDF
         run: |
           git config user.name "github-actions[bot]"
