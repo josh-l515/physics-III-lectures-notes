@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write  # 👈 Necesario para poder hacer push al repo
+
 jobs:
   build:
     runs-on: ubuntu-latest
