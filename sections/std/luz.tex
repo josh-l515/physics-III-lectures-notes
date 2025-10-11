@@ -1,2 +1,64 @@
 \section{luz }  
 Estructuralmente, Perl está basado en un estilo de bloques como los del C o AWK, y fue ampliamente adoptado por su destreza en el procesado de texto y no tener ninguna de las limitaciones de los otros lenguajes de script. La programación es el proceso de crear un conjunto de instrucciones que una computadora puede ejecutar para realizar una tarea. Implica escribir, probar y mantener código en un lenguaje específico, como Python o JavaScript, para crear software y aplicaciones. La programación es fundamental para el desarrollo de la tecnología moderna, permitiendo la automatización de tareas y la creación de soluciones digitales
+Usaremos la convención: \(r\ge 0\) (distancia radial), \(\theta\in[0,\pi]\) (ángulo polar, colatitud, medido desde el eje \(z\)) y \(\varphi\in[0,2\pi)\) (ángulo azimutal, medido en el plano \(xy\) desde el eje \(x\)).
+
+\subsection*{Relaciones con coordenadas cartesianas}
+\begin{align}
+x &= r \sin\theta \cos\varphi,\\
+y &= r \sin\theta \sin\varphi,\\
+z &= r \cos\theta.
+\end{align}
+
+\subsection*{Relaciones inversas}
+\begin{align}
+r &= \sqrt{x^2 + y^2 + z^2},\\
+\theta &= \arccos\!\left(\frac{z}{\sqrt{x^2+y^2+z^2}}\right)
+      = \arccos\!\left(\frac{z}{r}\right),\\
+\varphi &= \operatorname{atan2}(y,x).
+\end{align}
+
+\subsection*{Elementos diferenciales}
+\begin{align}
+\mathrm{d}\mathbf{r}\cdot\mathrm{d}\mathbf{r} &= \mathrm{d}r^{2} + r^{2}\mathrm{d}\theta^{2} + r^{2}\sin^{2}\theta\,\mathrm{d}\varphi^{2},\\
+\mathrm{d}V &= r^{2}\sin\theta\,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}\varphi.
+\end{align}
+
+\subsection*{Vectores unitarios}
+Los vectores unitarios dependientes de la posición son \(\hat{\mathbf{e}}_{r},\ \hat{\mathbf{e}}_{\theta},\ \hat{\mathbf{e}}_{\varphi}\) con orientaciones estándar radial, polar y azimutal.
+
+\subsection*{Operadores diferenciales}
+Para un campo escalar \(f(r,\theta,\varphi)\):
+\begin{align}
+\nabla f &= \frac{\partial f}{\partial r}\,\hat{\mathbf{e}}_{r}
+          + \frac{1}{r}\frac{\partial f}{\partial \theta}\,\hat{\mathbf{e}}_{\theta}
+          + \frac{1}{r\sin\theta}\frac{\partial f}{\partial \varphi}\,\hat{\mathbf{e}}_{\varphi}.
+\end{align}
+
+Para un campo vectorial \(\mathbf{A}=A_{r}\hat{\mathbf{e}}_{r}+A_{\theta}\hat{\mathbf{e}}_{\theta}+A_{\varphi}\hat{\mathbf{e}}_{\varphi}\):
+\begin{align}
+\nabla\cdot\mathbf{A}
+&= \frac{1}{r^{2}}\frac{\partial}{\partial r}\!\left(r^{2}A_{r}\right)
+ + \frac{1}{r\sin\theta}\frac{\partial}{\partial \theta}\!\left(\sin\theta\,A_{\theta}\right)
+ + \frac{1}{r\sin\theta}\frac{\partial A_{\varphi}}{\partial \varphi},\\[6pt]
+\nabla\times\mathbf{A}
+&= \frac{1}{r\sin\theta}\left[
+    \frac{\partial}{\partial \theta}\!\left(\sin\theta\,A_{\varphi}\right)
+    - \frac{\partial A_{\theta}}{\partial \varphi}
+  \right]\hat{\mathbf{e}}_{r}\nonumber\\
+&\quad + \frac{1}{r}\left[
+    \frac{1}{\sin\theta}\frac{\partial A_{r}}{\partial \varphi}
+    - \frac{\partial}{\partial r}\!\left(r A_{\varphi}\right)
+  \right]\hat{\mathbf{e}}_{\theta}\nonumber\\
+&\quad + \frac{1}{r}\left[
+    \frac{\partial}{\partial r}\!\left(r A_{\theta}\right)
+    - \frac{\partial A_{r}}{\partial \theta}
+  \right]\hat{\mathbf{e}}_{\varphi}.
+\end{align}
+
+La laplaciana aplicada a un escalar \(f\) queda:
+\begin{align}
+\nabla^{2} f
+&= \frac{1}{r^{2}}\frac{\partial}{\partial r}\!\left(r^{2}\frac{\partial f}{\partial r}\right)
+ + \frac{1}{r^{2}\sin\theta}\frac{\partial}{\partial \theta}\!\left(\sin\theta\frac{\partial f}{\partial \theta}\right)
+ + \frac{1}{r^{2}\sin^{2}\theta}\frac{\partial^{2} f}{\partial \varphi^{2}}.
+\end{align}

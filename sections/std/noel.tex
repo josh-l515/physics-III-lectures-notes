@@ -1,2 +1,90 @@
 \section{Capitulo Noel}    
-Estructuralmente, Perl está basado en un estilo de bloques como los del C o AWK, y fue ampliamente adoptado por su destreza en el procesado de texto y no tener ninguna de las limitaciones de los otros lenguajes de script. La programación es el proceso de crear un conjunto de instrucciones que una computadora puede ejecutar para realizar una tarea. Implica escribir, probar y mantener código en un lenguaje específico, como Python o JavaScript, para crear software y aplicaciones. La programación es fundamental para el desarrollo de la tecnología moderna, permitiendo la automatización de tareas y la creación de soluciones digitales
+Estructuralmente, Perl está basado en un estilo de bloques como los del C o AWK, y fue ampliamente adoptado por su destreza en el procesado de texto y no tener ninguna de las limitaciones de los otros lenguajes de script. La programación es el proceso de crear un conjunto de instrucciones que una computadora puede ejecutar para realizar una tarea. Implica escribir, probar y mantener código en un lenguaje específico, como Python o JavaScript, para crear software y aplicaciones. La programación es fundamental para el desarrollo de la tecnología moderna, permitiendo la automatización de tareas y la creación de soluciones digitales 
+1. Ley de Coulomb
+\section*{6. Ecuaciones de Poisson y Laplace}
+Si $V$ es el potencial eléctrico:
+\begin{equation}
+\nabla^2 V=-\dfrac{\rho}{\varepsilon_0} \quad\text{(Ecuaci\'on de Poisson)}
+\end{equation}
+En regiones sin carga ($\rho=0$):
+\begin{equation}
+\nabla^2 V=0 \quad\text{(Ecuaci\'on de Laplace)}
+\end{equation}
+
+
+\section*{7. Condiciones de contorno en interfaces conductoras/diel\'ectricas}
+En la superficie de un conductor en equilibrio electrost\'atico:
+\begin{equation}
+\mathbf{E}_{\parallel}=0, \qquad E_{\perp}=\dfrac{\sigma}{\varepsilon_0}
+\end{equation}
+Entre dos diel\'ectricos 1 y 2 con permitividades $\varepsilon_1,\varepsilon_2$:
+\begin{align}
+(\mathbf{D}_2-\mathbf{D}_1)\cdot\hat{n}&=\sigma_{f} \\
+(\mathbf{E}_2-\mathbf{E}_1)\times\hat{n}&=0
+\end{align}
+Donde $\mathbf{D}=\varepsilon\mathbf{E}$ y $\sigma_f$ es la carga libre superficial.
+
+
+\section*{8. Energ\'ia en el campo electrost\'atico}
+Energ\'ia potencial de un par de cargas:
+\begin{equation}
+U=\dfrac{1}{4\pi\varepsilon_0}\,\dfrac{q_1 q_2}{r_{12}}
+\end{equation}
+Energ\'ia almacenada en un campo:
+\begin{equation}
+U=\dfrac{\varepsilon_0}{2}\int_{\text{all space}} E^2(\mathbf{r})\, d^3r
+\end{equation}
+
+
+\section*{9. Capacitancia}
+Para un capacitor de placas paralelas (área $A$, separación $d$):
+\begin{equation}
+C=\dfrac{\varepsilon_0 A}{d}
+\end{equation}
+Relaci\'on general: $C=Q/V$ y energ\'ia almacenada $U=\tfrac{1}{2}CV^2$.
+
+
+\section*{10. Fuerza sobre una carga en un campo eléctrico}
+\begin{equation}
+\mathbf{F}=q\mathbf{E}
+\end{equation}
+
+
+\section*{11. Distribuciones continuas comunes}
+\subsection*{Línea infinita con densidad $\lambda$}
+Campo a distancia radial $r$:
+\begin{equation}
+E(r)=\dfrac{\lambda}{2\pi\varepsilon_0 r}
+\end{equation}
+
+
+\subsection*{Plano infinito con densidad superficial $\sigma$}
+\begin{equation}
+E=\dfrac{\sigma}{2\varepsilon_0} \quad(\text{campo a cada lado del plano})
+\end{equation}
+
+
+\subsection*{Esfera cargada (radio $R$, carga total $Q$)}
+\begin{equation}
+E(r)=\begin{cases}
+\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q}{r^{2}} & r>R,\\[6pt]
+\dfrac{1}{4\pi\varepsilon_0}\dfrac{Q r}{R^{3}} & r<R \quad(\text{si la carga est\'a distribuida uniformemente en el volumen})
+\end{cases}
+\end{equation}
+
+
+\section*{12. Desarrollo multipolar (primeros t\'erminos)}
+Potencial a gran distancia ($r\gg$ tama\~no de la fuente):
+\begin{equation}
+V(\mathbf{r})=\dfrac{1}{4\pi\varepsilon_0}\left(\dfrac{Q}{r}+\dfrac{\mathbf{p}\cdot\hat{r}}{r^{2}}+\dfrac{1}{2}\sum_{ij} \dfrac{Q_{ij}\hat{r}_i\hat{r}_j}{r^{3}}+\cdots\right)
+\end{equation}
+Donde $\mathbf{p}$ es el momento dipolar y $Q_{ij}$ el tensor cuadrupolar.
+
+
+\section*{13. Imagen de cargas (ejemplo simple)}
+Carga $q$ a distancia $d$ sobre un plano conductor infinito: imagen $q'=-q$ a distancia $-d$; potencial para $z>0$ equivalente al de las dos cargas.
+
+
+\vspace{6pt}
+\noindent\textbf{Notas finales:} Este documento contiene las ecuaciones y fórmulas principales de la electrostática clásica. Puedes usarlo como hoja de referencia para el curso o pedir que incluya ejemplos resueltos en cada sección.
+
