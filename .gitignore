@@ -5,3 +5,75 @@
 *.fdb_latexmk
 build/
 !docs/main.pdf
+
+# Archivos temporales de LaTeX
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+
+# Archivos intermedios de latexmk y similares
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+# Archivos de compilación
+*.dvi
+*.xdv
+*.bbl
+*.blg
+*.brf
+*.nav
+*.snm
+*.vrb
+
+# Archivos temporales de Beamer
+*.nav
+*.snm
+*.vrb
+
+# Archivos generados por glossaries
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+
+# Archivos generados por listings
+*.lol
+
+# Archivos de índice
+*.idx
+*.ilg
+*.ind
+
+# Archivos de metadatos
+*.mw
+
+# Archivos de conversión
+*.ps
+*.eps
+
+# PDF final si no quieres versionarlo
+# (comenta esta línea si quieres subir tus PDFs)
+*.pdf
+
+# Archivos de backup y temporales de editores
+*~
+*.swp
+*.bak
+*.backup
+*.tmp
+*.temp
