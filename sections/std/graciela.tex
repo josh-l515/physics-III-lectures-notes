@@ -1,0 +1,45 @@
+\section{capitulo graciela}
+Wikipedia es una enciclopedia libre,[nota 2]​ políglota y editada de manera colaborativa. Es administrada por la Fundación Wikimedia, una organización sin ánimo de lucro cuya financiación está basada en donaciones. Sus más de 63 millones de artículos en 334 idiomas han sido redactados en conjunto por voluntarios de todo el mundo,[5]​ lo que suma más de 3500 millones de ediciones, y permite que cualquier persona pueda sumarse al proyecto[6]​ para editarlos, a menos que la página se encuentre protegida contra vandalismos para evitar problemas o disputas.
+
+Las coordenadas esféricas $(r, \theta, \varphi)$ describen la posición de un punto en el espacio mediante:
+
+\begin{itemize}
+    \item $r$: distancia del punto al origen, $r \ge 0$.
+    \item $\theta$: ángulo polar, medido desde el eje $z$, $0 \le \theta \le \pi$.
+    \item $\varphi$: ángulo azimutal, medido desde el eje $x$ en el plano $xy$, $0 \le \varphi < 2\pi$.
+\end{itemize}
+
+\section*{Conversión a coordenadas cartesianas}
+
+Las relaciones entre coordenadas cartesianas $(x,y,z)$ y esféricas son:
+
+\[
+x = r \sin\theta \cos\varphi, \qquad
+y = r \sin\theta \sin\varphi, \qquad
+z = r \cos\theta.
+\]
+
+Las inversas son:
+
+\[
+r = \sqrt{x^2 + y^2 + z^2}, \quad
+\theta = \arccos\left(\frac{z}{r}\right), \quad
+\varphi = \operatorname{atan2}(y, x).
+\]
+
+\section*{Elemento de volumen}
+
+El elemento de volumen en coordenadas esféricas se obtiene del Jacobiano:
+
+\[
+dV = r^2 \sin\theta \; dr \, d\theta \, d\varphi.
+\]
+
+\section*{Ejemplo: Volumen de una esfera}
+
+El volumen de una esfera de radio $R$ se calcula como:
+
+\[
+V = \int_0^{2\pi}\int_0^{\pi}\int_0^R r^2 \sin\theta \; dr \, d\theta \, d\varphi
+    = \frac{4}{3}\pi R^3.
+\]
