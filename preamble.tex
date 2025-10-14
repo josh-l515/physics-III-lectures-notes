@@ -8,7 +8,8 @@
 % ---------- Language ----------
 \usepackage[spanish]{babel}
 
-
+\usepackage[T1]{fontenc}    % Codificación de fuente
+\usepackage{helvet} % Usar una fuente sans-serif (opcional)
 
 % ---------- Math ----------
 \usepackage{amsmath, amssymb, amsfonts, latexsym}
@@ -39,49 +40,11 @@
 % ---------- Custom Environment ----------
 \usepackage{xparse}
 \usepackage{etoolbox}
+
+\usepackage{xcolor}
+
 \newcounter{excercise}
 
-% \NewDocumentEnvironment{excercise}{O{} O{0.95\linewidth} O{} m m}
-% {
-%     \vspace{1em}
-%     \refstepcounter{excercise}
-%     \noindent
-%     \ifstrempty{#1}
-%     {
-%         % No image
-%         \begin{minipage}[b]{0.97\linewidth}
-%             \textbf{Ejercicio \theexcercise–}%
-%             \phantomsection\label{#4}\par #5
-%             \ifstrempty{#3}{}{%
-%                 \vspace{0.5em}
-%                 \begin{flushright}
-%                     \textbf{Resp.(s):} \textbf{#3}
-%                 \end{flushright}
-%             }
-%         \end{minipage}
-%     }
-%     {
-%         % With image
-%         \begin{minipage}[b]{0.6\linewidth}
-%             \textbf{Ejercicio \theexcercise–}%
-%             \phantomsection\label{#4}\par #5
-%             \ifstrempty{#3}{}{%
-%                 \vspace{0.5em}
-%                 \begin{flushright}
-%                     \textbf{Resp.(s):} \textbf{#3}
-%                 \end{flushright}
-%             }
-%         \end{minipage}
-%         \hfill
-%         \begin{minipage}[b]{0.35\linewidth}
-%             \centering
-%             \includegraphics[width=#2]{#1}
-%         \end{minipage}
-%     }
-%     \vspace{1em}
-%     \hrule
-% }
-% {}
 
 
 \NewDocumentEnvironment{excercise}{O{} O{0.95\linewidth} O{} m m}
@@ -127,3 +90,11 @@
     \hrule
 }
 {}
+
+
+% Define Grayscale colors using the [RGB] model
+% A value of 0 is Black, and 255 is White.
+\definecolor{DarkGray}{RGB}{70,70,70}       % Very dark gray
+\definecolor{MediumGray}{RGB}{128,128,128}   % Medium gray
+\definecolor{LightGray}{RGB}{192,192,192}    % Light gray
+\definecolor{ChapterGray}{RGB}{180,180,180}  % A specific gray for the chapter number

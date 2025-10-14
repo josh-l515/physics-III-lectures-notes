@@ -1,0 +1,59 @@
+% Personalización de la portada
+\thispagestyle{empty} % No mostrar números de página en la portada
+% Información del Curso/Notas (Puedes personalizar esto)
+
+\begin{minipage}[l]{0.35\textwidth}
+    \hfill
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.6\textwidth}
+    \begin{flushleft}
+
+        \vspace*{3cm} % Espacio vertical desde la parte superior
+
+        % Título del Capítulo o Sección
+        \begin{center}
+            \fontsize{30}{50}\selectfont
+            \textbf{C A P Í T U L O}
+            \hspace{0.2em}
+            \fontsize{90}{100}\selectfont
+            \textbf{2}
+        \end{center}
+
+        \vspace{1cm} % Espacio entre el número de capítulo y el tema
+
+        % Tema principal (Electroestática)
+        \begin{center}
+            \fontsize{40}{60}\selectfont
+            \color{LightGray}
+            \textbf{Electroestática}
+        \end{center}
+
+        \vspace{2.5cm} % Espacio antes de la lista de subtemas
+
+        % Lista de Contenidos o Subtemas (como se ve en la imagen)
+        \begin{minipage}{0.6\textwidth} % Caja para alinear la lista
+        \raggedright
+        \linespread{1.5}\selectfont % Espaciado entre líneas para la lista
+            \begin{itemize}
+                \item[\textbf{4-1}] Ecuaciones de Maxwell
+                \item[\textbf{4-2}] Distribuciones de carga y corriente
+                \item[\textbf{4-3}] Ley de Coulomb
+                \item[\textbf{4-4}] Ley de Gauss
+                \item[\textbf{4-5}] Potencial escalar eléctrico
+                \item[\textbf{4-6}] Propiedades eléctricas de los materiales
+                \item[\textbf{4-7}] Conductores
+                \item[\textbf{4-8}] Dieléctricos
+                \item[\textbf{4-9}] Condiciones eléctricas de frontera
+                \item[\textbf{4-10}] Capacitancia
+                \item[\textbf{4-11}] Energía potencial electrostática
+                \item[\textbf{4-12}] Método de imagen
+            \end{itemize}
+        \end{minipage}
+
+        \vspace*{\fill} % Relleno vertical para empujar el resto hacia abajo
+    \end{flushleft}
+\end{minipage}
+
+\newpage % Termina la portada
+
