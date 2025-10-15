@@ -5,22 +5,20 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write  # 👈 Necesario para poder hacer push al repo
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Descargar el código del repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Crear la carpeta de salida que latexmk necesita
-      - name: Create build directory
-        run: mkdir -p build/sections
+      - name: Mirror directory structure into build/
+        run: |
+          find . -type d ! -path './.git*' ! -path './build*' -exec bash -c 'mkdir -p build/"${0#./}"' {} \;
 
-      # 3️⃣ Compilar usando tu .latexmkrc
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
@@ -28,13 +26,11 @@ jobs:
           compiler: latexmk
           args: "-pdf -interaction=nonstopmode -shell-escape"
 
-      # 4️⃣ Mover el PDF compilado a docs/
       - name: Move PDF to docs/
         run: |
           mkdir -p docs
           cp build/main.pdf docs/
 
-      # 5️⃣ Commit automático del PDF compilado
       - name: Commit and push PDF
         run: |
           git config user.name "github-actions[bot]"
