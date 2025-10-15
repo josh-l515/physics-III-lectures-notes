@@ -19,12 +19,14 @@ jobs:
         run: |
           find . -type d ! -path './.git*' ! -path './build*' -exec bash -c 'mkdir -p build/"${0#./}"' {} \;
 
+
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
           compiler: latexmk
-          args: "-pdf -interaction=nonstopmode -shell-escape"
+          args: "-xelatex -interaction=nonstopmode -shell-escape"
+
 
       - name: Move PDF to docs/
         run: |
